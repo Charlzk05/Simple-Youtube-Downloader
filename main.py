@@ -14,7 +14,6 @@ def audioDownloader(url, download_folder=None):
 
         if download_folder == None:
             output = audio.download()
-
         else:
             try:
                 output = audio.download(download_folder)
@@ -29,7 +28,6 @@ def audioDownloader(url, download_folder=None):
             name, ext = os.path.splitext(output)
             mp3_name = name + ".mp3"
             os.rename(output, mp3_name)
-
         else:
             try:
                 print(f"\nSaved to {os.path.abspath(download_folder)}\n")
@@ -55,16 +53,13 @@ def videoDownloader(url, download_folder=None):
 
         if download_folder == None:
             video.download()
-
         else:
             try:
                 video.download(download_folder)
-
                 print(f"Download Complete, {title}")
 
                 if download_folder == None:
                     print("\nSaved to current folder\n")
-
                 else:
                     print(f"\nSaved to {os.path.abspath(download_folder)}\n")
             except:
